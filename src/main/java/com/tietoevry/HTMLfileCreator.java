@@ -47,8 +47,8 @@ public class HTMLfileCreator {
             fWriter = new FileWriter(filepath);
             writer = new BufferedWriter(fWriter);
             writer.write(htmlString);
-            writer.newLine(); //this is not actually needed for html files - can make your code more readable though
-            writer.close(); //make sure you close the writer object
+            writer.newLine();
+            writer.close();
         } catch (Exception e) {
             //catch any exceptions here
         }

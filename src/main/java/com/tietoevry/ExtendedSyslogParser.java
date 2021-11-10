@@ -9,11 +9,11 @@ import java.util.*;
 public class ExtendedSyslogParser extends SyslogParser {
 
 
-    public long extendedParseRfc5424Date(String msg){
+    public long extendedParseRfc5424Date(String msg) {
         return parseRfc5424Date(msg);
     }
 
-    public List<Map<String,String>> sortParsedRfc5424Messages (List<String> messages, Charset charset, List<Event> eventsList, List<Map<String,String>> headersList){
+    public List<Map<String, String>> sortParsedRfc5424Messages(List<String> messages, Charset charset, List<Event> eventsList, List<Map<String, String>> headersList) {
 
         for (String msg : messages) {
             Set<String> keepFields = new HashSet<String>();
@@ -21,10 +21,9 @@ public class ExtendedSyslogParser extends SyslogParser {
             eventsList.add(event);
         }
 
-        for(Event eventList: eventsList){
+        for (Event eventList : eventsList) {
             headersList.add(eventList.getHeaders());
         }
-
 
 
         headersList.sort(Comparator.comparing(
