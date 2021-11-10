@@ -14,9 +14,10 @@ public class ExtendedSyslogParser extends SyslogParser {
     }
 
     public List<Map<String,String>> sortParsedRfc5424Messages (List<String> messages, Charset charset, List<Event> eventsList, List<Map<String,String>> headersList){
+
         for (String msg : messages) {
             Set<String> keepFields = new HashSet<String>();
-            Event event = parseMessage(msg, charset, keepFields);
+            Event event = this.parseMessage(msg, charset, keepFields);
             eventsList.add(event);
         }
 
